@@ -25,7 +25,7 @@ public abstract class LibraryYandexMusicClientBase : YandexMusicClientBase
         var endpoint = YandexMusicEndpoints.SetLike(_sectionType, userId, like);
 
         var body = HttpBodyBuilder.New()
-                                  .Add($"{_sectionType}-ids", string.Join(",", ids))
+                                  .Add($"{_sectionType.GetName()}-ids", string.Join(",", ids))
                                   .Build();
         
         await RestClient.PostAsync<Response>(endpoint, body, cancellationToken).ConfigureAwait(false);
@@ -39,7 +39,7 @@ public abstract class LibraryYandexMusicClientBase : YandexMusicClientBase
         var endpoint = YandexMusicEndpoints.SetDislike(_sectionType, userId, dislike);
 
         var body = HttpBodyBuilder.New()
-                                  .Add($"{_sectionType}-ids", string.Join(",", ids))
+                                  .Add($"{_sectionType.GetName()}-ids", string.Join(",", ids))
                                   .Build();
 
         await RestClient.PostAsync<Response>(endpoint, body, cancellationToken).ConfigureAwait(false);

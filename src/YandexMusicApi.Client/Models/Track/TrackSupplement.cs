@@ -1,3 +1,5 @@
+using Newtonsoft.Json;
+
 namespace YandexMusicApi.Client;
 
 public class TrackSupplement
@@ -6,5 +8,10 @@ public class TrackSupplement
     
     public string Description { get; set; } = null!;
     
-    //todo: fields
+    public Lyrics Lyrics { get; set; } = null!;
+    
+    public Videos Videos { get; set; } = null!;
+
+    [JsonProperty("radio_is_available")]
+    public bool RadioIsAvailable { get; set; }
 }

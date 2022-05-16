@@ -27,10 +27,10 @@ public class Track
     public int DurationMs { get; set; }
     
     public int PreviewDurationMs { get; set; }
-    
-    public IReadOnlyCollection<Artist> Artists { get; set; } = Array.Empty<Artist>();
 
-    public IReadOnlyCollection<string> Regions { get; set; } = Array.Empty<string>();
+    public IReadOnlyCollection<Artist> Artists { get; set; } = new List<Artist>();
+
+    public IReadOnlyCollection<string> Regions { get; set; } = new List<string>();
     
-    public IReadOnlyCollection<Album> Albums { get; set; } = Array.Empty<Album>();
+    public IReadOnlyCollection<Album> Albums { get; set; } = new List<Album>();
 }

@@ -23,12 +23,12 @@ public sealed class AlbumsClient : LibraryYandexMusicClientBase, IAlbumsClient
         return await base.GetAsync<List<Album>>(albumsIds, cancellationToken).ConfigureAwait(false);
     }
     
-    public async Task<Album> GetWithTracksAsync(string albumId, CancellationToken cancellationToken = default)
+    public async Task<AlbumWithTracks> GetWithTracksAsync(string albumId, CancellationToken cancellationToken = default)
     {
         if (albumId == null) throw new ArgumentNullException(nameof(albumId));
 
         var endpoint = AlbumsEndpoints.GetWithTracks(albumId);
-        var response = await RestClient.GetAsync<Response<Album>>(endpoint, cancellationToken).ConfigureAwait(false);
+        var response = await RestClient.GetAsync<Response<AlbumWithTracks>>(endpoint, cancellationToken).ConfigureAwait(false);
 
         return response.Result;
     }

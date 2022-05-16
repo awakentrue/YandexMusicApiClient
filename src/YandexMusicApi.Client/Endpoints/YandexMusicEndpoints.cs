@@ -7,22 +7,24 @@ internal static class YandexMusicEndpoints
     public static Uri SetLike(SectionType sectionType, string userId, bool like = true) 
     {
         var actionName = like ? "add-multiple" : "remove";
-
-        return new Uri($"{Api}users/{userId}/likes/{sectionType}s/{actionName}");
+        var sectionTypeName = sectionType.GetName();
+        
+        return new Uri($"{Api}users/{userId}/likes/{sectionTypeName}s/{actionName}");
     }
 
     public static Uri SetDislike(SectionType sectionType, string userId, bool dislike = true)
     {
         var actionName = dislike ? "add-multiple" : "remove";
+        var sectionTypeName = sectionType.GetName();
 
-        return new Uri($"{Api}users/{userId}/dislikes/{sectionType}s/{actionName}");
+        return new Uri($"{Api}users/{userId}/dislikes/{sectionTypeName}s/{actionName}");
     }
 
     public static Uri Search(SectionType sectionType, string text, int pageIndex, bool textCorrection)
     {
         return QueryUriBuilder.New($"{Api}search")
                               .AddQueryParameter("text", text)
-                              .AddQueryParameter("type", sectionType)
+                              .AddQueryParameter("type", sectionType.GetName())
                               .AddQueryParameter("page", pageIndex)
                               .AddQueryParameter("nocorrect", !textCorrection)
                               .Build();
@@ -31,8 +33,9 @@ internal static class YandexMusicEndpoints
     public static Uri Get(SectionType sectionType, IEnumerable<string> ids)
     {
         var idsQuery = string.Join(",", ids);
+        var sectionTypeName = sectionType.GetName();
         
-        return new Uri($"{Api}{sectionType}s?{sectionType}-ids={idsQuery}");
+        return new Uri($"{Api}{sectionTypeName}s?{sectionTypeName}-ids={idsQuery}");
     }
 
     public static class AccountEndpoints

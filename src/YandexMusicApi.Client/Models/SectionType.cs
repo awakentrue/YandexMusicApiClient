@@ -9,3 +9,11 @@ public enum SectionType
     Album,
     User,
 }
+
+public static class SectionTypeExtensions
+{
+    public static string GetName(this SectionType sectionType)
+    {
+        return sectionType.ToString().ToLower();
+    }
+}

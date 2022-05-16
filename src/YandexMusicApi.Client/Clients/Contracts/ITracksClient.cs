@@ -14,7 +14,7 @@ public interface ITracksClient
 
     Task SetDislikeAsync(string userId, IEnumerable<string> tracksIds, bool dislike = true, CancellationToken cancellationToken = default);
 
-    Task<Paging<Track>> SearchAsync(string text, bool textCorrection, int pageIndex = 0, CancellationToken cancellationToken = default);
+    Task<Paging<Track>> SearchAsync(string text, bool textCorrection = true, int pageIndex = 0, CancellationToken cancellationToken = default);
     
     Task<Stream> DownloadAsync(string trackId, string albumId, CancellationToken cancellationToken = default);
 }
