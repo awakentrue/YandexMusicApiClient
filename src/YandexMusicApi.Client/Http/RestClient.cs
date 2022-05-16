@@ -64,7 +64,7 @@ public class RestClient : IRestClient
         await EnsureSuccessStatusCodeAsync(response, cancellationToken);
 
         var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-        
+
         return JsonConvert.DeserializeObject<TResponse>(content)!;
     }
     

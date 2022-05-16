@@ -35,7 +35,7 @@ internal static class YandexMusicEndpoints
         return new Uri($"{Api}{sectionType}s?{sectionType}-ids={idsQuery}");
     }
 
-    internal static class AccountEndpoints
+    public static class AccountEndpoints
     {
         public static readonly Uri AccountStatus = new Uri($"{Api}account/status");
         
@@ -44,7 +44,7 @@ internal static class YandexMusicEndpoints
         public static readonly Uri AccountSettings = new Uri($"{Api}account/settings");
     }
     
-    internal static class TracksEndpoints
+    public static class TracksEndpoints
     {
         public static Uri GetSimilarTracks(string trackId) => new Uri($"{Api}tracks/{trackId}/similar");
 
@@ -53,12 +53,12 @@ internal static class YandexMusicEndpoints
         public static Uri TrackDownloadInfo(string trackId, string albumId) => new Uri($"{Api}tracks/{trackId}:{albumId}/download-info");
     }
 
-    internal static class AlbumsEndpoints
+    public static class AlbumsEndpoints
     {
         public static Uri GetWithTracks(string albumId) => new Uri($"{Api}/albums/{albumId}/with-tracks");
     }
 
-    internal static class ArtistsEndpoints
+    public static class ArtistsEndpoints
     {
         public static Uri GetTracks(string artistId, int pageIndex, int pageSize)
         {
@@ -78,5 +78,10 @@ internal static class YandexMusicEndpoints
         }
 
         public static Uri GetBriefInfo(string artistId) => new Uri($"{Api}artists/{artistId}/brief-info");
+    }
+
+    public static class GenresEndpoints
+    {
+        public static readonly Uri GetGenres = new Uri($"{Api}genres");
     }
 }

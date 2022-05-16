@@ -11,6 +11,8 @@ public interface IYandexMusicClient
     IPlaylistsClient Playlists { get; }
     
     IAccountClient Account { get; }
+    
+    IGenresClient Genres { get; }
 
     Task<SearchResult> SearchAsync(string text, int pageIndex = 0, bool textCorrection = true, CancellationToken cancellationToken = default);
 }

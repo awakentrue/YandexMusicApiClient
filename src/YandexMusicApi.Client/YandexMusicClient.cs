@@ -18,6 +18,7 @@ public class YandexMusicClient : IYandexMusicClient
         Albums = new AlbumsClient(restClient, _searchService);
         Artists = new ArtistsClient(restClient, _searchService);
         Playlists = new PlaylistsClient(restClient, _searchService);
+        Genres = new GenresClient(restClient);
         Account = new AccountClient(restClient);
     }
 
@@ -30,6 +31,8 @@ public class YandexMusicClient : IYandexMusicClient
     public IPlaylistsClient Playlists { get; }
     
     public IAccountClient Account { get; }
+    
+    public IGenresClient Genres { get; }
 
     public async Task<SearchResult> SearchAsync(string text, int pageIndex = 0, bool textCorrection = true, CancellationToken cancellationToken = default)
     {

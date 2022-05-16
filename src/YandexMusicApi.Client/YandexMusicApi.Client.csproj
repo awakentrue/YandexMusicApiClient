@@ -5,6 +5,19 @@
         <LangVersion>10.0</LangVersion>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <PackageId>YandexMusicApi.Client</PackageId>
+        <Title>YandexMusicApi.Client</Title>
+        <Authors>Alexander Rumyancev @awakentrue</Authors>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/awakentrue/YandexMusicApiClient/</PackageProjectUrl>
+        <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+        <Description>Unofficial client for Yandex.Music API written in C#/.NET. For more information, visit https://github.com/awakentrue/YandexMusicApiClient</Description>
+        <PackageTags>music client yandex dotnet yandex-api yandex-music net6 api</PackageTags>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <NoWarn>1591</NoWarn>
     </PropertyGroup>
 
     <ItemGroup>
