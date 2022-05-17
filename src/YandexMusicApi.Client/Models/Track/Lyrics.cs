@@ -16,6 +16,4 @@ public class Lyrics
     public bool ShowTranslation { get; set; }
     
     public string TextLanguage { get; set; } = null!;
-    
-    public string Url { get; set; } = null!;
 }

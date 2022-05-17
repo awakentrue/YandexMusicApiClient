@@ -14,5 +14,5 @@ public class Genre
 
     public GenreTitles Titles { get; set; } = null!;
 
-    public List<Genre> SubGenres { get; set; } = new List<Genre>();
+    public IReadOnlyCollection<Genre> SubGenres { get; set; } = new List<Genre>();
 }

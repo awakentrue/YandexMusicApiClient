@@ -17,9 +17,9 @@ public class Playlist
 
     public string Title { get; set; } = null!;
 
-    public int Revision { get; set; }
+    public int? Revision { get; set; }
     
-    public int Snapshot { get; set; }
+    public int? Snapshot { get; set; }
     
     public int TrackCount { get; set; }
     
@@ -36,7 +36,7 @@ public class Playlist
     
     public bool IsPremiere { get; set; }
     
-    public int DurationMs { get; set; }
+    public int? DurationMs { get; set; }
     
-    public int LikesCount { get; set; }
+    public int? LikesCount { get; set; }
 }
