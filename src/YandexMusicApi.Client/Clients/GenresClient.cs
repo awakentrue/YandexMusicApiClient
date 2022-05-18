@@ -3,6 +3,7 @@ using GenresEndpoints = YandexMusicApi.Client.YandexMusicEndpoints.GenresEndpoin
 
 namespace YandexMusicApi.Client;
 
+///<inheritdoc cref="IGenresClient"/>
 public sealed class GenresClient : YandexMusicClientBase, IGenresClient
 {
     internal GenresClient(IRestClient restClient) : base(restClient) { }

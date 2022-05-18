@@ -3,6 +3,7 @@ using AlbumsEndpoints = YandexMusicApi.Client.YandexMusicEndpoints.AlbumsEndpoin
 
 namespace YandexMusicApi.Client;
 
+///<inheritdoc cref="IAlbumsClient"/>
 public sealed class AlbumsClient : LibraryYandexMusicClientBase, IAlbumsClient
 {
     internal AlbumsClient(IRestClient restClient, ISearchService searchService) : base(restClient, searchService, SectionType.Album) { }

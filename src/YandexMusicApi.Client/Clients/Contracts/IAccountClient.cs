@@ -1,5 +1,8 @@
 namespace YandexMusicApi.Client;
 
+/// <summary>
+/// Client for retrieving information about account.
+/// </summary>
 public interface IAccountClient
 {
     Task<AccountStatus> GetAccountStatusAsync(CancellationToken cancellationToken = default);

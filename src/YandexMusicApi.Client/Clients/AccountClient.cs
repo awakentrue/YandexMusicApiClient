@@ -3,6 +3,7 @@ using AccountEndpoints = YandexMusicApi.Client.YandexMusicEndpoints.AccountEndpo
 
 namespace YandexMusicApi.Client;
 
+///<inheritdoc cref="IAccountClient"/>
 public sealed class AccountClient : YandexMusicClientBase, IAccountClient
 {
     internal AccountClient(IRestClient restClient) : base(restClient) { }

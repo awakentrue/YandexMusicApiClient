@@ -3,6 +3,7 @@ using TracksEndpoints = YandexMusicApi.Client.YandexMusicEndpoints.TracksEndpoin
 
 namespace YandexMusicApi.Client;
 
+///<inheritdoc cref="ITracksClient"/>
 public sealed class TracksClient : LibraryYandexMusicClientBase, ITracksClient
 {
     internal TracksClient(IRestClient restClient, ISearchService searchService) : base(restClient, searchService, SectionType.Track) { }

@@ -2,6 +2,7 @@ using YandexMusicApi.Client.Http;
 
 namespace YandexMusicApi.Client;
 
+///<inheritdoc cref="IPlaylistsClient"/>
 public sealed class PlaylistsClient : LibraryYandexMusicClientBase, IPlaylistsClient
 {
     internal PlaylistsClient(IRestClient restClient, ISearchService searchService) : base(restClient, searchService, SectionType.Playlist) { }

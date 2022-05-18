@@ -3,6 +3,7 @@ using ArtistsEndpoints = YandexMusicApi.Client.YandexMusicEndpoints.ArtistsEndpo
 
 namespace YandexMusicApi.Client;
 
+///<inheritdoc cref="IArtistsClient"/>
 public sealed class ArtistsClient : LibraryYandexMusicClientBase, IArtistsClient
 {
     internal ArtistsClient(IRestClient restClient, ISearchService searchService) : base(restClient, searchService, SectionType.Artist) { }

@@ -2,6 +2,7 @@ using YandexMusicApi.Client.Http;
 
 namespace YandexMusicApi.Client;
 
+///<inheritdoc cref="IYandexMusicClient"/>
 public class YandexMusicClient : IYandexMusicClient
 {
     private readonly ISearchService _searchService;
