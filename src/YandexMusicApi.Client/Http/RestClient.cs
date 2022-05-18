@@ -7,10 +7,16 @@ namespace YandexMusicApi.Client.Http;
 public class RestClient : IRestClient
 {
     private readonly HttpClient _httpClient;
+    private readonly JsonSerializerSettings _jsonSerializerSettings;
 
     private RestClient(Action<HttpClient>? configureClient = null)
     {
         _httpClient = new HttpClient();
+        _jsonSerializerSettings = new JsonSerializerSettings
+        {
+            NullValueHandling = NullValueHandling.Ignore,
+        };
+
         configureClient?.Invoke(_httpClient);
     }
     
@@ -64,8 +70,8 @@ public class RestClient : IRestClient
         await EnsureSuccessStatusCodeAsync(response, cancellationToken);
 
         var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-
-        return JsonConvert.DeserializeObject<TResponse>(content)!;
+        
+        return JsonConvert.DeserializeObject<TResponse>(content, _jsonSerializerSettings)!;
     }
     
     private static async Task EnsureSuccessStatusCodeAsync(HttpResponseMessage response, CancellationToken cancellationToken)

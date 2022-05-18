@@ -12,13 +12,13 @@ public class LabelJsonConverter : JsonConverter<List<Label>>
     {
         var token = JToken.Load(reader);
         
-        if (token.HasValues == false)
+        if (token.HasValues == false || token.Type != JTokenType.Array)
         {
             return existingValue;
         }
-
-        var idExists = token.ToString().Contains(nameof(Label.Id), StringComparison.OrdinalIgnoreCase);
-        if (idExists)
+        
+        var tokenIsObjectLabel = token.First!.Type == JTokenType.Object;
+        if (tokenIsObjectLabel)
         {
             return token.ToObject<List<Label>>();
         }
