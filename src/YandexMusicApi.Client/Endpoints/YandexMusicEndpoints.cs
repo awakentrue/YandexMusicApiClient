@@ -83,6 +83,11 @@ internal static class YandexMusicEndpoints
         public static Uri GetBriefInfo(string artistId) => new Uri($"{Api}artists/{artistId}/brief-info");
     }
 
+    public static class PlaylistsEndpoint
+    {
+        public static Uri GetUserPlaylist(string userId) => new Uri($"{Api}users/{userId}/playlists/list");
+    }
+
     public static class GenresEndpoints
     {
         public static readonly Uri GetGenres = new Uri($"{Api}genres");

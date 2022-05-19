@@ -1,4 +1,5 @@
 using YandexMusicApi.Client.Http;
+using PlaylistsEndpoint = YandexMusicApi.Client.YandexMusicEndpoints.PlaylistsEndpoint;
 
 namespace YandexMusicApi.Client;
 
@@ -24,6 +25,16 @@ public sealed class PlaylistsClient : LibraryYandexMusicClientBase, IPlaylistsCl
         var response = await base.GetAsync<PlaylistResult>(ids, cancellationToken).ConfigureAwait(false);
 
         return response.Playlists;
+    }
+
+    public async Task<IReadOnlyCollection<Playlist>> GetUserPlaylistAsync(string userId, CancellationToken cancellationToken = default)
+    {
+        if (userId == null) throw new ArgumentNullException(nameof(userId));
+
+        var endpoint = PlaylistsEndpoint.GetUserPlaylist(userId);
+        var response = await RestClient.GetAsync<Response<List<Playlist>>>(endpoint, cancellationToken).ConfigureAwait(false);
+
+        return response.Result;
     }
 
     public async Task SetLikeAsync(string userId, IEnumerable<PlaylistId> playlistIds, bool like = true, CancellationToken cancellationToken = default)

@@ -16,13 +16,21 @@ public interface IPlaylistsClient
     Task<Playlist> GetAsync(PlaylistId playlistId, CancellationToken cancellationToken = default);
 
     /// <summary>
-    /// Get playlist information.
+    /// Get several playlists information.
     /// </summary>
     /// <param name="playlistIds">The Yandex.Music IDs of the playlists. The playlist ID is a union of the playlist owner ID and playlist kind.</param>
     /// <param name="cancellationToken">The cancellation token to cancel operation.</param>
     /// <exception cref="YandexMusicClientException">Thrown if request to Yandex.Music API does not indicate success.</exception>
     Task<IReadOnlyCollection<Playlist>> GetAsync(IEnumerable<PlaylistId> playlistIds, CancellationToken cancellationToken = default);
-    
+
+    /// <summary>
+    /// Get several user playlists information. 
+    /// </summary>
+    /// <param name="userId"></param>
+    /// <param name="cancellationToken"></param>
+    /// <exception cref="YandexMusicClientException">Thrown if request to Yandex.Music API does not indicate success.</exception>
+    Task<IReadOnlyCollection<Playlist>> GetUserPlaylistAsync(string userId, CancellationToken cancellationToken = default);
+
     /// <summary>
     /// Add or remove the playlist to favorites.
     /// </summary>
