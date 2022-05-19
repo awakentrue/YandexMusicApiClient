@@ -6,6 +6,7 @@
       src="https://music.yandex.ru/blocks/meta/i/og-image.png?webp=false"
       alt="Yandex.Music API client">
 </h1>
+
 [![License](https://img.shields.io/github/license/awakentrue/YandexMusicApiClient)](./LICENSE)
 [![NuGet version](https://img.shields.io/nuget/v/YandexMusicApi.Client.svg)](https://nuget.org/packages/YandexMusicApi.Client)
 [![NuGet downloads](https://img.shields.io/nuget/dt/YandexMusicApi.Client.svg)](https://nuget.org/packages/YandexMusicApi.Client)
@@ -59,3 +60,6 @@ class Program
     }
 }
 ```
+
+## Documentation
+Coming soon...
