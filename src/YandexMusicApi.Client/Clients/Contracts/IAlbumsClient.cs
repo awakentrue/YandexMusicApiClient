@@ -59,5 +59,5 @@ public interface IAlbumsClient
     /// <param name="pageIndex">The page index of search result.</param>
     /// <param name="cancellationToken">The cancellation token to cancel operation.</param>
     /// <exception cref="YandexMusicClientException">Thrown if request to Yandex.Music API does not indicate success.</exception>
-    Task<Paging<Album>> SearchAsync(string text, bool textCorrection, int pageIndex = 0, CancellationToken cancellationToken = default);
+    Task<Paging<Album>> SearchAsync(string text, bool textCorrection = true, int pageIndex = 0, CancellationToken cancellationToken = default);
 }
