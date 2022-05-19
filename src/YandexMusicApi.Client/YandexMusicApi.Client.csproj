@@ -13,13 +13,14 @@
         <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
         <Description>Unofficial client for Yandex.Music API written in C#/.NET. For more information, visit https://github.com/awakentrue/YandexMusicApiClient</Description>
         <PackageTags>music client yandex dotnet yandex-api yandex-music net6 api</PackageTags>
-        <PackageIconUrl>https://music.yandex.ru/blocks/meta/i/og-image.png?webp=false</PackageIconUrl>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
-        <NoWarn>1591</NoWarn>
         <PackageVersion>1.0.2</PackageVersion>
+        <PackageIconUrl>https://music.yandex.ru/blocks/meta/i/og-image.png</PackageIconUrl>
+        <RepositoryUrl>https://github.com/awakentrue/YandexMusicApiClient/</RepositoryUrl>
+        <NoWarn>1591,NU5048</NoWarn>
     </PropertyGroup>
 
     <ItemGroup>
