@@ -34,7 +34,7 @@ services.AddGuestYandexMusicApiClient();
 ```
 
 #### Using without DI container
-```csharp~~~~
+```csharp
 // with authorization token:
 var client = new YandexMusicClient(RestClient.Authorized("token"));
 // else
