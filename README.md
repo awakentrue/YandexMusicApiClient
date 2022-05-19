@@ -7,9 +7,9 @@
       alt="Yandex.Music API client">
 </h1>
 
-[![License](https://img.shields.io/github/license/awakentrue/YandexMusicApiClient)](./LICENSE)
-[![NuGet version](https://img.shields.io/nuget/v/YandexMusicApi.Client.svg)](https://nuget.org/packages/YandexMusicApi.Client)
-[![NuGet downloads](https://img.shields.io/nuget/dt/YandexMusicApi.Client.svg)](https://nuget.org/packages/YandexMusicApi.Client)
+[![License](https://img.shields.io/github/license/awakentrue/YandexMusicApiClient?style=flat-square)](./LICENSE)
+[![NuGet version](https://img.shields.io/nuget/v/YandexMusicApi.Client.svg?style=flat-square)](https://nuget.org/packages/YandexMusicApi.Client)
+[![NuGet downloads](https://img.shields.io/nuget/dt/YandexMusicApi.Client.svg?style=flat-square)](https://nuget.org/packages/YandexMusicApi.Client)
 
 Unofficial client for Yandex.Music API written in C#/.NET
 
