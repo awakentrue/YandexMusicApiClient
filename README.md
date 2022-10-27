@@ -3,7 +3,7 @@
     <img
       height="200"
       width="200"
-      src="https://music.yandex.ru/blocks/meta/i/og-image.png?webp=false"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Yandex_Music_icon.svg/2048px-Yandex_Music_icon.svg.png"
       alt="Yandex.Music API client">
 </h1>
 
