@@ -1,4 +1,5 @@
 using YandexMusicApi.Client.Http;
+using YandexMusicApi.Client.Utils;
 using TracksEndpoints = YandexMusicApi.Client.YandexMusicEndpoints.TracksEndpoints;
 
 namespace YandexMusicApi.Client;
@@ -12,9 +13,9 @@ public sealed class TracksClient : LibraryYandexMusicClientBase, ITracksClient
     {
         if (trackId == null) throw new ArgumentNullException(nameof(trackId));
 
-        var albums = await GetAsync(new[] {trackId}, cancellationToken).ConfigureAwait(false);
+        var tracks = await GetAsync(new[] {trackId}, cancellationToken).ConfigureAwait(false);
         
-        return albums.Single();
+        return tracks.Single();
     }
 
     public async Task<IReadOnlyCollection<Track>> GetAsync(IEnumerable<string> tracksIds, CancellationToken cancellationToken = default)
@@ -67,8 +68,7 @@ public sealed class TracksClient : LibraryYandexMusicClientBase, ITracksClient
 
         var response = await RestClient.GetAsync<Response<List<TrackDownloadInfo>>>(endpoint, cancellationToken).ConfigureAwait(false);
         
-        const string mp3CodecName = "mp3";
-        var mp3DownloadInfo = response.Result.First(x => x.Codec == mp3CodecName);
+        var mp3DownloadInfo = response.Result.First(x => x.Codec == AudioCodecNames.Mp3);
 
         return new Uri($"{mp3DownloadInfo.DownloadInfoUrl}&format=json");
     }

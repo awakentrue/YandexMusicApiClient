@@ -12,9 +12,9 @@ public sealed class ArtistsClient : LibraryYandexMusicClientBase, IArtistsClient
     {
         if (artistId == null) throw new ArgumentNullException(nameof(artistId));
 
-        var albums = await GetAsync(new[] {artistId}, cancellationToken).ConfigureAwait(false);
+        var artists = await GetAsync(new[] {artistId}, cancellationToken).ConfigureAwait(false);
         
-        return albums.Single();
+        return artists.Single();
     }
 
     public async Task<IReadOnlyCollection<Artist>> GetAsync(IEnumerable<string> artistsIds, CancellationToken cancellationToken = default)
